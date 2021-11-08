@@ -4,7 +4,6 @@ let input = document.getElementById("task");
 let arrOfListItems = [];
 
 // only creates list if input exist else input -> null
-
 const clickHandler = () => {
   let task = input.value;
   if (task !== "") {
@@ -20,7 +19,7 @@ const loadhandler = (obj) => {
   createlist(obj);
 };
 
-// I cerate listitems
+// create list items
 const createlist = (taskobj) => {
   let listItem = document.createElement("li");
   let list = document.getElementById("list");
@@ -50,7 +49,6 @@ const createObjectfrominput = (taskItem) => {
   for (let i = count; i < arrOfListItems.length; i++) {
     count = i;
   }
-
   const myobject = {
     id: count,
     value: taskItem,
@@ -66,6 +64,7 @@ const deleteButton = (deletebtn, taskobj) => {
   parent.removeChild(element);
   deleterLS(taskobj.id);
 };
+
 //deleter from localstorage
 function deleterLS(index) {
   let arr = arrOfListItems;
@@ -89,7 +88,7 @@ const toggleBtn = (listrow) => {
   });
 };
 
-//use key-presse "entre"  to call clickhandler
+//use key-presse "entre" to call clickhandler
 input.addEventListener("keyup", function (pressed) {
   let name = pressed.key;
   if (name === "Enter") {
@@ -97,7 +96,7 @@ input.addEventListener("keyup", function (pressed) {
   }
 });
 
-//get the list of data from localtorgare and call loadhandlern.
+//get the list of data from localstorage and call loadhandlern.
 window.addEventListener("load", (event) => {
   getarr();
   arrOfListItems.forEach((e) => {
@@ -105,7 +104,7 @@ window.addEventListener("load", (event) => {
   });
 });
 
-// I created a seperate function for getting the data from localstorgare to use it twice in the program
+// I created a seperate function for getting the data from localstorage to use it twice in the program
 function getarr() {
   arrOfListItems = JSON.parse(localStorage.getItem("arrofobjects"));
 }
