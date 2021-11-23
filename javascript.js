@@ -106,5 +106,5 @@ window.addEventListener("load", (event) => {
 
 // I created a seperate function for getting the data from localstorage to use it twice in the program
 function getarr() {
-  arrOfListItems = JSON.parse(localStorage.getItem("arrofobjects"));
+  arrOfListItems = JSON.parse(localStorage.getItem("arrofobjects")) || [];
 }
