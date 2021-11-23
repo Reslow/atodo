@@ -11,7 +11,7 @@ const clickHandler = () => {
     localStorage.setItem("arrofobjects", JSON.stringify(arrOfListItems));
   }
 
-  input.value = null;
+  input.value = "";
 };
 
 //create list from obj in localstorage
